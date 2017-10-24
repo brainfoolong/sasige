@@ -1,4 +1,4 @@
-# Sasige - Your Static Site Generator [![Build Status](https://travis-ci.org/brainfoolong/sasige-tests.svg?branch=master)](https://travis-ci.org/brainfoolong/sasige-tests)
+# Sasige - Your Static Site Generator [![Build Status](https://travis-ci.org/brainfoolong/sasige.svg?branch=master)](https://travis-ci.org/brainfoolong/sasige)
 Sasige is a powerful and lightweight tool to generate static sites. Sasige is written in PHP. PHP is one of the main web programming languages.
 
 ## Website
