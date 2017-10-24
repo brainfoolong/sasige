@@ -1,0 +1,1 @@
+php -d short_open_tag=1 -f %~dp0/sasige.php %*

@@ -1,0 +1,21 @@
+<phpunit bootstrap="_bootstrap.php"
+         stopOnError="true"
+         stopOnFailure="true"
+         colors="true"
+         strict="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+>
+    <testsuites>
+        <testsuite name="all">
+            <directory>.</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../sasige/src/</directory>
+            <file>../config.php</file>
+        </whitelist>
+    </filter>
+</phpunit>

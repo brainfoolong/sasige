@@ -1,0 +1,17 @@
+{
+  "id": "sasige-docs",
+  "name": "Sasige Docs Theme",
+  "option": {
+    "navigationPagesetTags" : ["navigation"]
+  },
+  "translation": {
+    "en": {
+      "menu": "Menu",
+      "lastUpdated" : "Last updated"
+    },
+    "de": {
+      "menu": "Menü",
+      "lastUpdated" : "Zuletzt aktualisiert"
+    }
+  }
+}
