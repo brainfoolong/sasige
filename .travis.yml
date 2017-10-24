@@ -3,7 +3,3 @@ php:
   - '5.6'
 script:
  - phpunit --configuration tests/_phpunit.xml
- - phpcs .
-install:
- - pyrus install pear/PHP_CodeSniffer
- - phpenv rehash
