@@ -14,3 +14,4 @@ https://brainfoolong.github.io/sasige-docs/
 * Code style: PSR1/PSR2
 * Community - New features only with an existing issue
 * Always write tests for new stuff
+* Always update the [website and docs](https://brainfoolong.github.io/sasige-docs/) for new or changed features
