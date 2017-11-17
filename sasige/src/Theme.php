@@ -23,12 +23,6 @@ class Theme
     private static $package;
 
     /**
-     * Option override
-     * @var array
-     */
-    private static $optionOverride = [];
-
-    /**
      * Get package.json data
      * @return array
      */
@@ -53,9 +47,6 @@ class Theme
         $data = self::getPackageData();
         if (!isset($data["option"][$key])) {
             throw new Exception("Package.json does not contain an option with key '$key'");
-        }
-        if (array_key_exists($key, self::$optionOverride)) {
-            return self::$optionOverride[$key];
         }
         return $data["option"][$key];
     }

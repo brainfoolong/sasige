@@ -11,9 +11,6 @@ final class ThemeTest extends TestCase
 
     public function testPackage()
     {
-        Theme::setOption("navigationPagesetTags", 1);
-        $this->assertEquals(1, Theme::getOption("navigationPagesetTags"));
-
         $this->assertEquals("Menu", Theme::getTranslation("menu", "en"));
     }
 
@@ -26,7 +23,7 @@ final class ThemeTest extends TestCase
     public function testException2()
     {
         $this->expectException(Exception::class);
-        Theme::setOption("foo", 1);
+        Theme::getOption("foos");
     }
 
     public function testException3()
