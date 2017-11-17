@@ -8,6 +8,12 @@ namespace Nullix\Sasige;
 class Generator
 {
     /**
+     * The current set of pages
+     * @var Page[]
+     */
+    private static $pages;
+
+    /**
      * Build all public files
      */
     public static function build()
@@ -29,7 +35,7 @@ class Generator
         }
         Console::writeStdout("###Build###\n\n");
         Console::writeStdout("===Html page preparation===\n");
-        $pages = [];
+        self::$pages = [];
         foreach ($files as $file) {
             $filename = basename($file);
             $directory = substr(dirname($file), mb_strlen($pagesDir) + 1);
@@ -51,13 +57,13 @@ class Generator
                 continue;
             }
             Console::writeStdout(" Done\n");
-            $pages[] = $page;
+            self::$pages[] = $page;
         }
 
         Console::writeStdout("\n");
         Console::writeStdout("===Html page generation===\n");
 
-        foreach ($pages as $page) {
+        foreach (self::$pages as $page) {
             Console::writeStdout("Generate page " . $page->getPath() . "...");
             $pagination = $page->getPagination();
             if ($pagination) {

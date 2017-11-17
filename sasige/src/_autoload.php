@@ -39,12 +39,15 @@ spl_autoload_register(function ($class) {
     $mappings = [
         'Nullix\\Sasige\\' => [
             __DIR__ . '/../../' . Config::getThemeFolder() . '/src/',
-            __DIR__ . '/../../' . Config::getAdditionalSrcFolder() . "/"
+            __DIR__ . '/../../src/'
         ],
     ];
 
     foreach ($mappings as $prefix => $baseDirs) {
         foreach ($baseDirs as $baseDir) {
+            if (!is_dir($baseDir)) {
+                continue;
+            }
             // does the class use the namespace prefix?
             $len = strlen($prefix);
             if (strncmp($prefix, $class, $len) !== 0) {

@@ -43,21 +43,6 @@ class Theme
     }
 
     /**
-     * Set a value for an option
-     * @param string $key
-     * @param mixed $value
-     * @throws Exception
-     */
-    public static function setOption($key, $value)
-    {
-        $data = self::getPackageData();
-        if (!isset($data["option"][$key])) {
-            throw new Exception("Package.json does not contain an option with key '$key'");
-        }
-        self::$optionOverride[$key] = $value;
-    }
-
-    /**
      * Get a value for an option
      * @param string $key
      * @return mixed

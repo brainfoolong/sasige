@@ -51,31 +51,6 @@ class Config
     private static $outputFolder;
 
     /**
-     * The folder for the additional src files to include
-     * @var string
-     */
-    private static $additionalSrcFolder;
-
-    /**
-     * Get additional src folder
-     * @return string
-     */
-    public static function getAdditionalSrcFolder()
-    {
-        return self::$additionalSrcFolder;
-    }
-
-    /**
-     * Set additional src folder
-     * @param string $additionalSrcFolder
-     */
-    public static function setAdditionalSrcFolder($additionalSrcFolder)
-    {
-        self::$additionalSrcFolder = $additionalSrcFolder;
-    }
-
-
-    /**
      * Get theme folder
      * @return string
      */
