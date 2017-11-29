@@ -19,6 +19,11 @@ class File
         foreach ($files as $src => $dest) {
             $directory = dirname($dest);
             self::createDirectoryRecursive($directory);
+            // if is directory than create it and go ahead
+            if (is_dir($src)) {
+                self::createDirectoryRecursive($dest);
+                continue;
+            }
             copy($src, $dest);
             Console::writeStdout("Copied " . $src . " to " . $dest . "\n");
         }

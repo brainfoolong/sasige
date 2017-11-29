@@ -334,7 +334,7 @@ class Pageset
      * Check if page is matching given filter
      * @param Page $page
      * @param array $filter
-     * @return bool|void
+     * @return bool
      */
     private function isPageMatchingFilter(Page $page, $filter)
     {
@@ -364,5 +364,6 @@ class Pageset
         if ($filter["type"] == "language") {
             return $page->getLanguage() === $filter["language"];
         }
+        return false;
     }
 }

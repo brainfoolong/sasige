@@ -14,7 +14,7 @@ require_once  __DIR__ . "/File.php";
 
 define("SASIGE_PROJECT_ROOT", File::sanitizePath(dirname(dirname(__DIR__))));
 define("SASIGE_BIN_ROOT", SASIGE_PROJECT_ROOT . "/sasige/bin");
-define("SASIGE_VERSION", "0.2");
+define("SASIGE_VERSION", "0.3");
 
 require_once  __DIR__ . "/_autoload.php";
 require_once  __DIR__ . "/../../config.php";
