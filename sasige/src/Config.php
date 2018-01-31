@@ -51,6 +51,12 @@ class Config
     private static $outputFolder;
 
     /**
+     * The folder to put the hook files in
+     * @var string
+     */
+    private static $hooksFolder;
+
+    /**
      * Get theme folder
      * @return string
      */
@@ -120,6 +126,24 @@ class Config
     public static function setOutputFolder($outputFolder)
     {
         self::$outputFolder = $outputFolder;
+    }
+
+    /**
+     * Get hooks folder
+     * @return string
+     */
+    public static function getHooksFolder(): string
+    {
+        return self::$hooksFolder;
+    }
+
+    /**
+     * Set hooks folder
+     * @param string $hooksFolder
+     */
+    public static function setHooksFolder(string $hooksFolder): void
+    {
+        self::$hooksFolder = $hooksFolder;
     }
 
     /**

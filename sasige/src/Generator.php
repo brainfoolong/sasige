@@ -23,6 +23,7 @@ class Generator
         $publicFolder = SASIGE_PROJECT_ROOT . "/" . Config::getOutputFolder();
         $pagesFolder = SASIGE_PROJECT_ROOT . "/" . Config::getPagesFolder();
         $staticFolder = SASIGE_PROJECT_ROOT . "/" . Config::getStaticFolder();
+        $hooksFolder = Config::getHooksFolder() ? SASIGE_PROJECT_ROOT . "/" . Config::getHooksFolder() : null;
 
         // delete and recreate the whole public folder
         File::deleteDirectory($publicFolder, true);
@@ -33,6 +34,15 @@ class Generator
         if (!Config::getDefaultLanguage()) {
             throw new Exception("You must set a default language");
         }
+
+        // before build hook
+        if ($hooksFolder) {
+            $hookFile = $hooksFolder . "/before-build.php";
+            if (file_exists($hookFile)) {
+                require $hookFile;
+            }
+        }
+
         Console::writeStdout("###Build###\n\n");
         Console::writeStdout("===Html page preparation===\n");
         self::$pages = [];
@@ -120,6 +130,14 @@ class Generator
         Console::writeStdout("Finished\n\n\n");
 
         Console::writeStdout("###Build complete###\n\n\n");
+
+        // after build hook
+        if ($hooksFolder) {
+            $hookFile = $hooksFolder . "/after-build.php";
+            if (file_exists($hookFile)) {
+                require $hookFile;
+            }
+        }
     }
 
     /**
