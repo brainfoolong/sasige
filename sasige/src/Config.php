@@ -132,7 +132,7 @@ class Config
      * Get hooks folder
      * @return string
      */
-    public static function getHooksFolder(): string
+    public static function getHooksFolder()
     {
         return self::$hooksFolder;
     }
@@ -141,7 +141,7 @@ class Config
      * Set hooks folder
      * @param string $hooksFolder
      */
-    public static function setHooksFolder(string $hooksFolder): void
+    public static function setHooksFolder($hooksFolder)
     {
         self::$hooksFolder = $hooksFolder;
     }
